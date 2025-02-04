@@ -9,7 +9,7 @@ import ru.netology.ShopRepository;
 
 public class ShopRepositoryTest {
     @Test
-    public void ShopRepositoryTest1(){
+    public void ShopRepositoryTest1() {
         ShopRepository repository = new ShopRepository();
         repository.add(new Product(1, "Тест_Продукт_1", 10));
         repository.add(new Product(2, "Тест_Продукт_2", 50));
@@ -21,19 +21,19 @@ public class ShopRepositoryTest {
     }
 
     @Test
-    public void ShopRepositoryTest2(){
+    public void ShopRepositoryTest2() {
         ShopRepository repository = new ShopRepository();
         repository.add(new Product(1, "Тест_Продукт_1", 10));
         repository.add(new Product(2, "Тест_Продукт_2", 50));
         repository.add(new Product(3, "Тест_Продукт_3", 20));
-        
+
         repository.remove(3);
-        
+
         Assertions.assertNull(repository.findById(3));
     }
 
     @Test
-    public void ShopRepositoryTest3(){
+    public void ShopRepositoryTest3() {
         ShopRepository repository = new ShopRepository();
         repository.add(new Product(1, "Тест_Продукт_1", 10));
         repository.add(new Product(2, "Тест_Продукт_2", 50));
@@ -45,7 +45,7 @@ public class ShopRepositoryTest {
     }
 
     @Test
-    public void ShopRepositoryTest4(){
+    public void ShopRepositoryTest4() {
         ShopRepository repository = new ShopRepository();
         repository.add(new Product(1, "Тест_Продукт_1", 10));
         repository.add(new Product(2, "Тест_Продукт_2", 50));

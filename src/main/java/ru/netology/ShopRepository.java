@@ -5,10 +5,12 @@ public class ShopRepository {
 
     /**
      * Вспомогательный метод для имитации добавления элемента в массив
+     * 
      * @param current — массив, в который мы хотим добавить элемент
      * @param product — элемент, который мы хотим добавить
-     * @return — возвращает новый массив, который выглядит, как тот, что мы передали,
-     * но с добавлением нового элемента в конец
+     * @return — возвращает новый массив, который выглядит, как тот, что мы
+     *         передали,
+     *         но с добавлением нового элемента в конец
      */
     private Product[] addToArray(Product[] current, Product product) {
         Product[] tmp = new Product[current.length + 1];
@@ -21,9 +23,10 @@ public class ShopRepository {
 
     /**
      * Метод добавления товара в репозиторий
+     * 
      * @param product — добавляемый товар
      */
-    public void add(Product product) throws AlreadyExistsException{
+    public void add(Product product) throws AlreadyExistsException {
         for (Product i : products) {
             if (i.getId() == product.id) {
                 throw new AlreadyExistsException("Id:" + product.id + "already exists in current repository.");
@@ -37,7 +40,7 @@ public class ShopRepository {
     }
 
     // Этот способ мы рассматривали в теории в теме про композицию
-    public void remove(int id) throws NotFoundException{
+    public void remove(int id) throws NotFoundException {
         if (findById(id) == null) {
             throw new NotFoundException("Element with id: " + id + " not found");
         } else {
@@ -55,10 +58,10 @@ public class ShopRepository {
 
     public Product findById(int id) {
         for (Product product : products) {
-          if (product.getId() == id) {
-            return product;
-          }
+            if (product.getId() == id) {
+                return product;
+            }
         }
         return null;
-      }
+    }
 }
